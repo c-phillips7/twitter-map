@@ -1,0 +1,28 @@
+
+/* css for all states not specified below */
+
+
+.state {
+    fill: grey;
+    background-color: pink;
+    opacity: 1;
+}        
+.state:hover {
+    fill: indigo;
+    opacity: 0.7;
+}                
+
+/* color and width of borders between states */
+.borders {stroke:#FFFFFF;
+         stroke-width:1}    
+
+
+/* set display to yes to show the circle for the District of Columbia, or none to hide it */
+.dccircle {display:yes}                      
+
+/* color and width of lines around Alaska and Hawaii */
+.separator1 {stroke:#B0B0B0; stroke-width:2} 
+    
+/* Individual states can be colored as follows: */
+ /* .ks,.mt,.pa {fill:#0000FF}  */
+/* .ca,.de {fill:#FF0000}  */ 
