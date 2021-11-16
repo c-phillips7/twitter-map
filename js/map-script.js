@@ -69,8 +69,24 @@ var trendsPlaceholder = [
 
 // console.log(trendsPlaceholder[0]);
 
-let 
+var stateEl = document.getElementsByClassName("state");
+// console.log(stateEl);
 
+$(".state").on('click', function handleClick () {
+   $(this).css('fill', 'red');
+
+   console.log($(this).attr('id'));
+
+   var idCode = $(this).attr('id')
+
+   getTwitterMapData(idCode);
+});
+
+
+
+
+
+// code from Fayaz for GET
 
 var getTwitterMapData = async function (city, idCode) {
    var url = "https://api.twitter.com/1.1/trends/place.json?id=" + idCode;
@@ -80,6 +96,14 @@ var getTwitterMapData = async function (city, idCode) {
            "Accept": "application/json"
        }
 
+   });
+
+   Promise.resolve(response).then(function (response) {
+      return response.json()
+  }).then(function (data) {
+      console.log(data);
+});}
+
 // function generateMapElementFromTrendsResponse(trendsPlaceholder) {
 
    // iterate over data
@@ -87,3 +111,20 @@ var getTwitterMapData = async function (city, idCode) {
    // build itme element
    // append to container
 
+
+
+
+
+   // $("path, circle").hover(function(e) {
+//    $('#info-box').css('display','block');
+//    $('#info-box').html($(this).data('info'));
+//  });
+ 
+//  $("path, circle").mouseleave(function(e) {
+//    $('#info-box').css('display','none');
+//  });
+ 
+//  $(document).mousemove(function(e) {
+//    $('#info-box').css('top',e.pageY-$('#info-box').height()-30);
+//    $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
+//  }).mouseover();

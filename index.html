@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,14 +30,18 @@
     <h1>Title of project</h1>
   </header>
 
-  <div>
-<!-- Dropdown for selecting state -->
-  </div>
+  <select id="city-select" class="custom-select">
+    <!-- Dropdown for selecting state -->
+    <option selected value="">Select the city</option>
+
+  </select>
 
   <div>
     <!-- List of popular tags -->
   </div>
 
+  <div id="info-box"></div>
+  
   <div class="map-div">
     <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
       <title>Blank map of the United States, territories not included</title>
@@ -333,6 +338,3 @@
     crossorigin="anonymous"></script>
   <script src="./js/map-script.js"></script>
   <script src="./js/script.js"></script>
-  
-</body>
-</html>
