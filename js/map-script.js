@@ -1,3 +1,6 @@
+var mapContainerEl = document.querySelector('#map-container');
+var newyorkSvg = document.querySelector('#NY');
+newyorkSvg.setAttribute("style", "background:blue;");
 var trendsPlaceholder = [
    {
       trends: [
