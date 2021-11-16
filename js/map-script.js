@@ -83,11 +83,18 @@ var trendsPlaceholder = [
    },
 ];
 
-function generateMapElementFromTrendsResponse(trendsPlaceholder) {
+function generateMapElementFromTrendsResponse(twitterTrends) {
 
+   var trendsArray = twitterTrends[0].trends;
    // iterate over data
-
+   for (let i = 0; i < trendsArray.length; i++) {
+       console.log(trendsArray[i].name);
+      
+   }
       // build itme element
       // append to container
       
 }
+
+// 🚀 start
+generateMapElementFromTrendsResponse(trendsPlaceholder)
