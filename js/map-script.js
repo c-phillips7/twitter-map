@@ -64,6 +64,7 @@ var trendsPlaceholder = [
    }]
 ];
 
+// const map 
 
 // console.log(trendsPlaceholder);
 
@@ -73,13 +74,21 @@ var stateEl = document.getElementsByClassName("state");
 // console.log(stateEl);
 
 $(".state").on('click', function handleClick () {
-   $(this).css('fill', 'red');
+   // State name from title
+   // console.log($(this).children().text());
 
-   console.log($(this).attr('id'));
+   // Console log id
+   // console.log($(this).attr('id'));
 
    var idCode = $(this).attr('id')
 
    getTwitterMapData(idCode);
+
+   
+
+   $(this).css('fill', 'red');
+
+   
 });
 
 
@@ -88,20 +97,37 @@ $(".state").on('click', function handleClick () {
 
 // code from Fayaz for GET
 
-var getTwitterMapData = async function (city, idCode) {
+var getTwitterMapData = async function (idCode) {
    var url = "https://api.twitter.com/1.1/trends/place.json?id=" + idCode;
    var response = await fetch(url, {
        headers: {
            "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAJGvVgEAAAAAvr%2BMhJK9GoRizhT2IoB4CUA33hQ%3DcVzgRYRpQnWphilbufXbtfKqMenK6qccgJWrBE8P0E5Ft8bxAm",
            "Accept": "application/json"
        }
-
    });
 
+   
+
    Promise.resolve(response).then(function (response) {
+
+      console.log(response);
       return response.json()
   }).then(function (data) {
+    var mapJSON = JSON.stringify(data)
       console.log(data);
+   // Only some trends start with hashtages, add logic to check if starts with 
+
+   $("#state-name").text("lol")
+   $("#top-trend").text(data[0].trends[0].name)
+   
+   
+   $(".modal").modal('show');
+
+      // console.log(data[0].trends[0].name);
+      // let stateName = $(this).children().text()
+      // let topTrend = data[0].trends[0].name  
+   
+
 });}
 
 // function generateMapElementFromTrendsResponse(trendsPlaceholder) {
