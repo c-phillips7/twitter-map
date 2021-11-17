@@ -1,4 +1,9 @@
 var trendsDiv = document.querySelector(".trends-div")
+trendsDiv.classList= "trends-div"
+var trendsPlaceholder = document.createElement("p")
+trendsPlaceholder.classList = ("placeholder")
+trendsPlaceholder.innerHTML = "Top 10 trends..."
+trendsDiv.append(trendsPlaceholder)
 
 // if any previous selection has been made, clear list before generating a new one
 var clearTrendsList = function() {
