@@ -16,16 +16,21 @@ var trendsDiv = document.querySelector(".trends-div")
 // console.log(myTrend)
 
 
-// function to generate li for each trend
-generateTrendingList = (trendData) => {
+var clearTrends = function() {
+    while (trendsDiv.firstChild) {
+        trendsDiv.removeChild(trendsDiv.firstChild)
+    }
+}
+// function to generate list of trends
+var generateTrendingList = function(trendData) {
+    //  create a li for each trend
     var trendsUl = document.createElement("ul")
-    trendsUl.classList= ("trends-ul")    
-    //  pull trendss from locally stored data
+    trendsUl.classList= ("trends-ul")
+    trendsDiv.append(trendsUl)
     for (var i = 0; i<trendData.length; i++) {
         var trendItem= document.createElement("li")
         trendItem.classList= ("trend-item slide-right")
-        trendItem.textContent= (trendData[i])
-        trendsDiv.append(trendsUl)
+        trendItem.innerHTML= (trendData[i])
         trendsUl.append(trendItem)
     }
 }
@@ -90,9 +95,9 @@ var getTwitterData = async function (city, code) {
         for (var i = 0; i < 10; i++) {
             cityData.trends.push(data[0].trends[i].name)
         }
-        console.log('city data', cityData)
         localStorage.setItem('Points of Interest', JSON.stringify(cityData))
 
+        clearTrends()
         generateTrendingList(cityData.trends)
       
 

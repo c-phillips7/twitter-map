@@ -2,6 +2,10 @@
 .trends-ul {
     list-style: none;
     padding-top: 2vh;
+    display: block;
+    margin: auto;
+    width: 50%;
+    
 }
 .trend-item {
     color: rgb(13, 134, 128);
@@ -11,7 +15,6 @@
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
     letter-spacing: 1px;
-    width: 75%;
     text-align: center;
 }
 
