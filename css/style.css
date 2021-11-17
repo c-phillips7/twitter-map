@@ -14,6 +14,13 @@
     text-align: center;
 }
 
+.trends-div{
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+
 
 /* css for all states not specified below */
 
