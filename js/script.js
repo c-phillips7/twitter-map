@@ -1,22 +1,7 @@
 var trendsDiv = document.querySelector(".trends-div")
 
-// lines 4-16 are just test data to see if func will run properly
-// let testTrend = []
-// testTrend.push({
-//     name: "#atrend"
-// })
-// testTrend.push({
-//     name: "#another-trend"
-// })
-// testTrend.push({
-//     name: "#one-more-trend"
-// })
-// localStorage.setItem("trend", JSON.stringify(testTrend))
-// var myTrend = JSON.parse(localStorage.getItem('trend'))
-// console.log(myTrend)
-
-
-var clearTrends = function() {
+// if any previous selection has been made, clear list before generating a new one
+var clearTrendsList = function() {
     while (trendsDiv.firstChild) {
         trendsDiv.removeChild(trendsDiv.firstChild)
     }
@@ -34,8 +19,6 @@ var generateTrendingList = function(trendData) {
         trendsUl.append(trendItem)
     }
 }
-
-
 
 var cityObjects = [{
     name: "Albuquerque",
@@ -97,7 +80,7 @@ var getTwitterData = async function (city, code) {
         }
         localStorage.setItem('Points of Interest', JSON.stringify(cityData))
 
-        clearTrends()
+        clearTrendsList()
         generateTrendingList(cityData.trends)
       
 
