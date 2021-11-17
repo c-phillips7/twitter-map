@@ -1,3 +1,4 @@
+
 .trends-ul {
     list-style: none;
 }
@@ -12,3 +13,67 @@
     width: 75%;
     text-align: center;
 }
+
+
+/* css for all states not specified below */
+
+
+.state {
+    fill: grey;
+    background-color: pink;
+    opacity: 1;
+}        
+.state:hover {
+    fill: indigo;
+    opacity: 0.7;
+}                
+
+/* color and width of borders between states */
+.borders {stroke:#FFFFFF;
+         stroke-width:1}    
+
+
+/* set display to yes to show the circle for the District of Columbia, or none to hide it */
+.dccircle {display:yes}                      
+
+/* color and width of lines around Alaska and Hawaii */
+.separator1 {stroke:#B0B0B0; stroke-width:2} 
+    
+/* Individual states can be colored as follows: */
+ /* .ks,.mt,.pa {fill:#0000FF}  */
+/* .ca,.de {fill:#FF0000}  */ 
+
+
+#map-div{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  path:hover, circle:hover {
+    stroke: #002868 !important;
+    stroke-width:2px;
+    stroke-linejoin: round;
+    fill: #002868 !important;
+    cursor: pointer;
+  }
+  #path67 {
+    fill: none !important;
+    stroke: #A9A9A9 !important;
+    cursor: default;
+  }
+  #info-box {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #ffffff;
+    border: 2px solid #BF0A30;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: arial;
+  }
+
