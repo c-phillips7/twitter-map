@@ -1,6 +1,7 @@
 
 .trends-ul {
     list-style: none;
+    padding-top: 2vh;
 }
 .trend-item {
     color: rgb(13, 134, 128);

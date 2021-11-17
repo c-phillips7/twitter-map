@@ -1,4 +1,3 @@
-
 var trendsDiv = document.querySelector(".trends-div")
 
 // lines 4-16 are just test data to see if func will run properly
@@ -18,20 +17,19 @@ var trendsDiv = document.querySelector(".trends-div")
 
 
 // function to generate li for each trend
-generateTrendingList = (trend) => {
+generateTrendingList = (trendData) => {
     var trendsUl = document.createElement("ul")
-    trendsUl.classList= ("trends-ul")
-    trendsDiv.append(trendsUl)
-
-    //  pull #s from locally stored data
-    for (var i = 0; i<trend.length; i++) {
+    trendsUl.classList= ("trends-ul")    
+    //  pull trendss from locally stored data
+    for (var i = 0; i<trendData.length; i++) {
         var trendItem= document.createElement("li")
         trendItem.classList= ("trend-item slide-right")
-        trendItem.textContent = (trend[i].name)
+        trendItem.textContent= (trendData[i])
+        trendsDiv.append(trendsUl)
         trendsUl.append(trendItem)
     }
 }
-generateTrendingList(myTrend)
+
 
 
 var cityObjects = [{
@@ -95,10 +93,12 @@ var getTwitterData = async function (city, code) {
         console.log('city data', cityData)
         localStorage.setItem('Points of Interest', JSON.stringify(cityData))
 
+        generateTrendingList(cityData.trends)
+      
+
     }).catch(function (error) {
         if (error) {
         }
     });
 
 }
-
