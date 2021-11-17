@@ -42,7 +42,29 @@
     <!-- List of popular tags -->
   </div>
 
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- smaller modal option -->
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 id= "modal-header-text"></h4>
+        </div>
+        <div class="modal-body">
+          <p id="city-name"></p>
+          <p id="top-trend"></p>
+          <a id="link" class="link" target="_blank"></a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Larger Modal Option -->
+  <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -51,14 +73,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="state-name"></p>
+          <p id="city-name"></p>
           <p id="top-trend"></p>
+          <a id="link" class="link" target="_blank"></a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+
   </div>
   <div class= "map-container flex">
     <div class="map-div">
@@ -341,7 +365,6 @@
       
       </svg>
     </div>
-  </div>
 
   <footer>
     <!-- Credits -->

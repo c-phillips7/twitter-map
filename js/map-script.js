@@ -74,29 +74,17 @@ var stateEl = document.getElementsByClassName("state");
 // console.log(stateEl);
 
 $(".state").on('click', function handleClick () {
-   // State name from title
-   // console.log($(this).children().text());
-
-   // Console log id
-   // console.log($(this).attr('id'));
-
+   
    var idCode = $(this).attr('id')
 
    getTwitterMapData(idCode);
 
-   
-
+   // Change css to show which have been clicked
    $(this).css('fill', 'red');
-
    
 });
 
-
-
-
-
-// code from Fayaz for GET
-
+// code for GET request
 var getTwitterMapData = async function (idCode) {
    var url = "https://api.twitter.com/1.1/trends/place.json?id=" + idCode;
    var response = await fetch(url, {
@@ -107,7 +95,6 @@ var getTwitterMapData = async function (idCode) {
    });
 
    
-
    Promise.resolve(response).then(function (response) {
 
 
@@ -115,20 +102,40 @@ var getTwitterMapData = async function (idCode) {
   }).then(function (data) {
     var mapJSON = JSON.stringify(data)
 
-   // Only some trends start with hashtages, add logic to check if starts with 
+   
+      // console.log(mapJSON);
+   
+   // Use data to populate modal to display data on click
+      let cityName = data[0].locations[0].name
+      let topTrend = data[0].trends[0].name
+      let link = data[0].trends[0].url
 
-   $("#state-name").text("lol")
-   $("#top-trend").text(data[0].trends[0].name)
-   
-   
-   $(".modal").modal('show');
+     
+      addHashtag = function (mapJSON) {
+         // mapJSON not being passed, undefined in console
+         // console.log(mapJSON);
+      };
+      addHashtag ();
 
-      // console.log(data[0].trends[0].name);
-      // let stateName = $(this).children().text()
-      // let topTrend = data[0].trends[0].name  
-   
+      $("#modal-header-text").text("Top Trending!")
+      $("#city-name").text("City: " + cityName)
+      $("#top-trend").text("Trend: " + topTrend)
+      $("#link").text(link)
+      $("#link").attr("href", link);
+      
+      
+      
+      $(".modal").modal('show');
 
 });}
+
+   // Only some trends start with hashtages, add logic to check if starts with 
+
+   
+
+   
+
+
 
 // function generateMapElementFromTrendsResponse(trendsPlaceholder) {
 
