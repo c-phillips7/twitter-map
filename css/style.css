@@ -43,6 +43,19 @@
  /* .ks,.mt,.pa {fill:#0000FF}  */
 /* .ca,.de {fill:#FF0000}  */ 
 
+.link {
+ color: #002868;   
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em
+}
 
 #map-div{
     display: block;
