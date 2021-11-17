@@ -1,17 +1,87 @@
+:root{
+  --medium-violet-red: rgba(199, 44, 133, 1);
+  --terra-cotta: rgba(221, 111, 102, 1);
+  --middle-yellow-red: rgba(232, 173, 109, 1);
+  --middle-yellow-red-fade: rgba(232, 173, 109, 0.5);
+  --sap-green: rgba(105, 123, 57, 1);
+  --olive: rgba(137, 135, 63, 1);
+}
+.title {
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 7vh;
+	letter-spacing: 1;
+  margin-top: 2vh;
 
+}
+
+h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  -webkit-text-stroke: var(--terra-cotta);
+	background-size: cover;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 5em;
+	line-height: 1;
+	margin: 1vh;
+
+}
+.custom-select  {
+  background-color: #000000;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #ffffff;
+  padding: 8px 15px;
+  text-align: center;
+  margin: 4vh 2vh 1vh 2vh;
+  width: 97%;
+}
+.custom-select:hover {
+  color: var(--medium-violet-red);
+}
+.trends-div {
+  height: 75vh;
+  margin: 2vh;
+  background-color: #000000;
+  border-radius: 2vh;
+}
+.placeholder {
+  font-size: 4em;
+  text-align: center;
+  padding-top: 25vh;
+  color: var(--middle-yellow-red);
+  animation: float 3s ease-out infinite;
+}
+@keyframes float {
+  50% {
+     transform: translate(0, 20px);
+  }
+}
 .trends-ul {
     list-style: none;
+    padding-top: 3vh;
+    display: block;
+    margin: auto;
+    width: 50%;
 }
 .trend-item {
-    color: rgb(13, 134, 128);
-    border: 2px solid rgb(2, 216, 205);
+    color: #FFFFFF;
+    border: 2px solid var(--middle-yellow-red-fade);
+    border-radius: 2vh;
     padding: 1vh 2vh;
     margin-bottom: 1vh;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
     letter-spacing: 1px;
-    width: 75%;
     text-align: center;
+}
+.trend-item:hover {
+  border: 2px solid var(--middle-yellow-red);
 }
 
 
@@ -19,18 +89,18 @@
 
 
 .state {
-    fill: grey;
-    background-color: pink;
-    opacity: 1;
+  fill: grey;
+  background-color: pink;
+  opacity: 1;
 }        
 .state:hover {
-    fill: indigo;
-    opacity: 0.7;
+  fill: indigo;
+  opacity: 0.7;
 }                
 
 /* color and width of borders between states */
 .borders {stroke:#FFFFFF;
-         stroke-width:1}    
+       stroke-width:1}    
 
 
 /* set display to yes to show the circle for the District of Columbia, or none to hide it */
@@ -38,9 +108,9 @@
 
 /* color and width of lines around Alaska and Hawaii */
 .separator1 {stroke:#B0B0B0; stroke-width:2} 
-    
+  
 /* Individual states can be colored as follows: */
- /* .ks,.mt,.pa {fill:#0000FF}  */
+/* .ks,.mt,.pa {fill:#0000FF}  */
 /* .ca,.de {fill:#FF0000}  */ 
 
 .link {
@@ -58,35 +128,54 @@
 }
 
 #map-div{
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  path:hover, circle:hover {
-    stroke: #002868 !important;
-    stroke-width:2px;
-    stroke-linejoin: round;
-    fill: #002868 !important;
-    cursor: pointer;
-  }
-  #path67 {
-    fill: none !important;
-    stroke: #A9A9A9 !important;
-    cursor: default;
-  }
-  #info-box {
-    display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    background-color: #ffffff;
-    border: 2px solid #BF0A30;
-    border-radius: 5px;
-    padding: 5px;
-    font-family: arial;
-  }
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+path:hover, circle:hover {
+  stroke: #002868 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #002868 !important;
+  cursor: pointer;
+}
+#path67 {
+  fill: none !important;
+  stroke: #A9A9A9 !important;
+  cursor: default;
+}
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  .title {
+    height: 10vh;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .custom-select {
+    width: 95%;
+  }
+  .trend-item {
+    width: 40vh;
+  }
+  .trends-ul {
+    margin: 1vh;
+  }
+}
+/* REACH OUT STYLES END */

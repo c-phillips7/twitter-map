@@ -1,38 +1,29 @@
-
 var trendsDiv = document.querySelector(".trends-div")
+trendsDiv.classList= "trends-div"
+var trendsPlaceholder = document.createElement("p")
+trendsPlaceholder.classList = ("placeholder")
+trendsPlaceholder.innerHTML = "Top 10 trends..."
+trendsDiv.append(trendsPlaceholder)
 
-// lines 4-16 are just test data to see if func will run properly
-// let testTrend = []
-// testTrend.push({
-//     name: "#atrend"
-// })
-// testTrend.push({
-//     name: "#another-trend"
-// })
-// testTrend.push({
-//     name: "#one-more-trend"
-// })
-// localStorage.setItem("trend", JSON.stringify(testTrend))
-// var myTrend = JSON.parse(localStorage.getItem('trend'))
-// console.log(myTrend)
-
-
-// function to generate li for each trend
-generateTrendingList = (trend) => {
+// if any previous selection has been made, clear list before generating a new one
+var clearTrendsList = function() {
+    while (trendsDiv.firstChild) {
+        trendsDiv.removeChild(trendsDiv.firstChild)
+    }
+}
+// function to generate list of trends
+var generateTrendingList = function(trendData) {
+    //  create a li for each trend
     var trendsUl = document.createElement("ul")
     trendsUl.classList= ("trends-ul")
     trendsDiv.append(trendsUl)
-
-    //  pull #s from locally stored data
-    for (var i = 0; i<trend.length; i++) {
+    for (var i = 0; i<trendData.length; i++) {
         var trendItem= document.createElement("li")
         trendItem.classList= ("trend-item slide-right")
-        trendItem.textContent = (trend[i].name)
+        trendItem.innerHTML= (trendData[i])
         trendsUl.append(trendItem)
     }
 }
-generateTrendingList(myTrend)
-
 
 var cityObjects = [{
     name: "Albuquerque",
@@ -92,8 +83,11 @@ var getTwitterData = async function (city, code) {
         for (var i = 0; i < 10; i++) {
             cityData.trends.push(data[0].trends[i].name)
         }
-        console.log('city data', cityData)
         localStorage.setItem('Points of Interest', JSON.stringify(cityData))
+
+        clearTrendsList()
+        generateTrendingList(cityData.trends)
+      
 
     }).catch(function (error) {
         if (error) {
@@ -101,4 +95,3 @@ var getTwitterData = async function (city, code) {
     });
 
 }
-

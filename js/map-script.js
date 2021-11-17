@@ -97,10 +97,11 @@ var getTwitterMapData = async function (idCode) {
    
    Promise.resolve(response).then(function (response) {
 
-      console.log(response);
+
       return response.json()
   }).then(function (data) {
     var mapJSON = JSON.stringify(data)
+
    
       // console.log(mapJSON);
    
