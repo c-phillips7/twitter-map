@@ -64,7 +64,7 @@ selectMenu.on('change', function () {
 
 
 var getTwitterData = async function (city, code) {
-    var url = "https://api.twitter.com/1.1/trends/place.json?id=" + code;
+    var url = "https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/trends/place.json?id=" + code;
     var response = await fetch(url, {
         headers: {
             "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAMUBVwEAAAAAbefMCya8TAn%2FFqsCu1x%2F%2Fwn5zqk%3DZqyvGwPneBRzfIYnZz3fNMMjxMobWKHZjkbmlJVq63q6kwZjLE",
