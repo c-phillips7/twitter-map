@@ -1,3 +1,22 @@
+// Code from https://github.com/Rob--W/cors-anywhere/ to solve CORS error (used in fetch request)
+(function() {
+   var cors_api_host = 'cors-anywhere.herokuapp.com';
+   var cors_api_url = 'https://' + cors_api_host + '/';
+   var slice = [].slice;
+   var origin = window.location.protocol + '//' + window.location.host;
+   var open = XMLHttpRequest.prototype.open;
+   XMLHttpRequest.prototype.open = function() {
+       var args = slice.call(arguments);
+       var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+       if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+           targetOrigin[1] !== cors_api_host) {
+           args[1] = cors_api_url + args[1];
+       }
+       return open.apply(this, args);
+   };
+})();
+
+
 
 var stateEl = document.getElementsByClassName("state");
 
@@ -11,14 +30,13 @@ $(".state").on('click', async function handleClick() {
    console.log("testing function", await getTwitterMapData(idCode));
 
    await getTwitterMapData(idCode).then(function (mapJSON) {
-      console.log("how about this?");
+      // console.log("Fetch initiated");
       displayResults(mapJSON)
    });
 
 
    // Change css to show which have been clicked
    $(this).css('fill', 'red');
-
 });
 
 // code for GET request
@@ -74,25 +92,4 @@ function displayResults(mapJSON) {
 
    // display modal with updated text
    $(".modal").modal('show');
-}
-
-
-
-
-
-
-// css ideas for SVG file:
-
-// $("path, circle").hover(function(e) {
-//    $('#info-box').css('display','block');
-//    $('#info-box').html($(this).data('info'));
-//  });
-
-//  $("path, circle").mouseleave(function(e) {
-//    $('#info-box').css('display','none');
-//  });
-
-//  $(document).mousemove(function(e) {
-//    $('#info-box').css('top',e.pageY-$('#info-box').height()-30);
-//    $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
-//  }).mouseover();
+};
