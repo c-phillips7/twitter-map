@@ -50,7 +50,6 @@ var getTwitterMapData = async function (idCode) {
    });
 
 
-
    return Promise.resolve(response).then(function (response) {
       if (!response.ok) {
          console.log("no response, display error");
