@@ -6,6 +6,7 @@
   --sap-green: rgba(105, 123, 57, 1);
   --olive: rgba(137, 135, 63, 1);
 }
+/* style for title */
 .title {
 	text-align: center;
 	color: #FFF;
@@ -18,7 +19,6 @@
   margin-top: 2vh;
 
 }
-
 h1 {
   background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
   -webkit-text-stroke: var(--terra-cotta);
@@ -44,6 +44,7 @@ h1 {
 .custom-select:hover {
   color: var(--medium-violet-red);
 }
+/* style for trend list at top */
 .trends-div {
   height: 75vh;
   margin: 2vh;
@@ -66,14 +67,24 @@ h1 {
     list-style: none;
     padding-top: 3vh;
     display: block;
-    margin: auto;
-    width: 50%;
+    margin: 0 5.5vh 0 0;
+    text-align: center;
+}
+ul a {
+  color: var(--middle-yellow-red-fade);
+  text-decoration: none;
+}
+ul a:hover {
+  color: var(--middle-yellow-red);
+}
+ul a:visited {
+  color: var(--middle-yellow-red);
 }
 .trend-item {
     color: #FFFFFF;
     border: 2px solid var(--middle-yellow-red-fade);
     border-radius: 2vh;
-    padding: 1vh 2vh;
+    padding: 1.1vh 0;
     margin-bottom: 1vh;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 14px;
@@ -132,8 +143,6 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 path:hover, circle:hover {
   stroke: #002868 !important;
@@ -160,22 +169,29 @@ path:hover, circle:hover {
   font-family: arial;
 }
 
+
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
   .title {
     height: 10vh;
+
   }
   h1 {
     font-size: 3em;
   }
-  .custom-select {
-    width: 95%;
+ .custom-select{
+   width: 64vh;
+ }
+  .trends-div{
+    width: 64vh;
   }
-  .trend-item {
-    width: 40vh;
+  .placeholder {
+    font-size: 3em;
   }
-  .trends-ul {
-    margin: 1vh;
+  .map-div {
+    width: 120%;
+    height: 120%;
   }
 }
+
 /* REACH OUT STYLES END */
