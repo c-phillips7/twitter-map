@@ -30,7 +30,6 @@ h1 {
 	font-size: 5em;
 	line-height: 1;
 	margin: 1vh;
-
 }
 .custom-select  {
   background-color: #000000;
@@ -95,6 +94,38 @@ ul a:visited {
   border: 2px solid var(--middle-yellow-red);
 }
 
+.footer{
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #ffffff;
+  padding: 8px 15px;
+  margin: 4vh 2vh 1vh 2vh;
+  width: 97%;
+  border-radius: 2vh;
+  margin-top: 5em;
+}
+
+.description {
+  max-width: 100%;
+  display: flex;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: .5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.caption {
+ max-width: 100%;
+ margin-top: 1em;
+ margin-left: 10%;
+ font-family: "Lucida Console", Monaco, monospace;
+}
+
 
 /* css for all states not specified below */
 
@@ -128,6 +159,10 @@ ul a:visited {
  color: #002868;   
 }
 
+.modal-content {
+  max-width: 100%;
+}
+
 .modal-header {
     display: flex;
     flex-direction: row-reverse;
@@ -135,7 +170,8 @@ ul a:visited {
 .modal-body{
     display: flex;
     flex-direction: column;
-    margin-left: 2em
+    /* text-align: center; */
+    margin-left: 5%;
 }
 
 #map-div{

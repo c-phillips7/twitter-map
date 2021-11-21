@@ -20,7 +20,7 @@ var generateTrendingList = function(trendData) {
     for (var i = 0; i<trendData.length; i++) {
         var trendItem= document.createElement("li")
         trendItem.classList= ("trend-item slide-right")
-        trendItem.innerHTML= ("<a href=" + trendData[i].url + ">" + trendData[i].name + "</a>")
+        trendItem.innerHTML= ("<a href=" + trendData[i].url + " target=_blank>" + trendData[i].name + "</a>")
         trendsUl.append(trendItem)
     }
 }
