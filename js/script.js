@@ -279,8 +279,7 @@ var cityObjects = [{
 //     code: "2514815"
 // }
 ]
-
-// generateTrendingList(myTrend)
+generateTrendingList(myTrend)
 
 
 
